@@ -23,13 +23,33 @@ python3 -m http.server 8080
 ```
 Dann http://localhost:8080 öffnen.
 
-## Veröffentlichen (Beispiel Netlify)
-1. Auf https://app.netlify.com/drop den ganzen Ordner hineinziehen.
-2. Unter *Domain settings* die Domain `dietcoach.me` hinzufügen.
-3. Beim Domain-Anbieter die DNS-Einträge so ändern, wie Netlify es anzeigt (danach die alte Soloist-Seite kündigen).
-4. HTTPS wird automatisch aktiviert.
+## Veröffentlichen mit GitHub Pages
+Die Seite ist fertig für GitHub Pages: alle Pfade sind relativ, `index.html` liegt im Hauptordner, und `.nojekyll` sorgt dafür, dass GitHub die Dateien unverändert ausliefert.
 
-Andere Hoster (IONOS, Strato, GitHub Pages …) funktionieren genauso: einfach alle Dateien hochladen.
+1. **Repository anlegen:** Auf https://github.com/new ein neues Repository erstellen, z. B. `dietcoach-website`. Sichtbarkeit **Public** (GitHub Pages ist im kostenlosen Tarif nur für öffentliche Repositories verfügbar). *Kein* README, keine .gitignore, keine Lizenz hinzufügen.
+2. **Hochladen** (im Terminal in diesem Ordner):
+   ```bash
+   git remote add origin https://github.com/<DEIN-NAME>/dietcoach-website.git
+   git push -u origin main
+   ```
+   Beim ersten Push fragt Git nach Benutzername und Passwort. Als Passwort ein *Personal Access Token* verwenden (GitHub → Settings → Developer settings → Personal access tokens). Alternativ geht alles auch mit der App *GitHub Desktop*.
+3. **Pages einschalten:** Im Repository *Settings → Pages → Build and deployment*: Source **Deploy from a branch**, Branch **main**, Ordner **/ (root)** → *Save*. Nach 1–2 Minuten ist die Seite unter `https://<DEIN-NAME>.github.io/dietcoach-website/` erreichbar.
+4. **Eigene Domain dietcoach.me** (erst, wenn alles passt):
+   - In *Settings → Pages → Custom domain* `dietcoach.me` eintragen und speichern (GitHub legt dabei eine Datei `CNAME` an – danach einmal `git pull` ausführen).
+   - Beim Domain-Anbieter die DNS-Einträge setzen:
+     | Typ | Name | Wert |
+     |---|---|---|
+     | A | @ | 185.199.108.153 |
+     | A | @ | 185.199.109.153 |
+     | A | @ | 185.199.110.153 |
+     | A | @ | 185.199.111.153 |
+     | CNAME | www | `<DEIN-NAME>.github.io` |
+   - Alte Einträge, die auf Soloist zeigen, entfernen. Sobald die Domain geprüft ist, **Enforce HTTPS** anhaken. Danach kann das Soloist-Abo gekündigt werden.
+5. **Datenschutz:** In `datenschutz.html` als Hosting-Anbieter GitHub eintragen.
+
+**Hinweis:** Bei einem öffentlichen Repository ist der gesamte Code einsehbar. Bitte keine privaten Daten committen, die nicht ohnehin auf der Website stehen.
+
+Änderungen später veröffentlichen: Dateien bearbeiten, dann `git add -A`, `git commit -m "…"` und `git push` – GitHub aktualisiert die Seite automatisch.
 
 ## Bilder austauschen
 Bilder liegen in `img/`. Einfach eine Datei mit gleichem Namen ersetzen (Hochformat ca. 1500 × 2000 px, WebP oder JPG – bei JPG die Endung im HTML anpassen).
