@@ -26,14 +26,14 @@ Dann http://localhost:8080 öffnen.
 ## Veröffentlichen mit GitHub Pages
 Die Seite ist fertig für GitHub Pages: alle Pfade sind relativ, `index.html` liegt im Hauptordner, und `.nojekyll` sorgt dafür, dass GitHub die Dateien unverändert ausliefert.
 
-1. **Repository anlegen:** Auf https://github.com/new ein neues Repository erstellen, z. B. `dietcoach-website`. Sichtbarkeit **Public** (GitHub Pages ist im kostenlosen Tarif nur für öffentliche Repositories verfügbar). *Kein* README, keine .gitignore, keine Lizenz hinzufügen.
+1. **Repository anlegen:** Auf https://github.com/new ein neues Repository erstellen, `dietcoachme.github.io`. Sichtbarkeit **Public** (GitHub Pages ist im kostenlosen Tarif nur für öffentliche Repositories verfügbar). *Kein* README, keine .gitignore, keine Lizenz hinzufügen.
 2. **Hochladen** (im Terminal in diesem Ordner):
    ```bash
-   git remote add origin https://github.com/<DEIN-NAME>/dietcoach-website.git
+   git remote add origin https://github.com/dietcoachme/dietcoachme.github.io.git
    git push -u origin main
    ```
    Beim ersten Push fragt Git nach Benutzername und Passwort. Als Passwort ein *Personal Access Token* verwenden (GitHub → Settings → Developer settings → Personal access tokens). Alternativ geht alles auch mit der App *GitHub Desktop*.
-3. **Pages einschalten:** Im Repository *Settings → Pages → Build and deployment*: Source **Deploy from a branch**, Branch **main**, Ordner **/ (root)** → *Save*. Nach 1–2 Minuten ist die Seite unter `https://<DEIN-NAME>.github.io/dietcoach-website/` erreichbar.
+3. **Pages einschalten:** Im Repository *Settings → Pages → Build and deployment*: Source **Deploy from a branch**, Branch **main**, Ordner **/ (root)** → *Save*. Nach 1–2 Minuten ist die Seite unter `https://dietcoachme.github.io/` erreichbar.
 4. **Eigene Domain dietcoach.me** (erst, wenn alles passt):
    - In *Settings → Pages → Custom domain* `dietcoach.me` eintragen und speichern (GitHub legt dabei eine Datei `CNAME` an – danach einmal `git pull` ausführen).
    - Beim Domain-Anbieter die DNS-Einträge setzen:
@@ -43,7 +43,7 @@ Die Seite ist fertig für GitHub Pages: alle Pfade sind relativ, `index.html` li
      | A | @ | 185.199.109.153 |
      | A | @ | 185.199.110.153 |
      | A | @ | 185.199.111.153 |
-     | CNAME | www | `<DEIN-NAME>.github.io` |
+     | CNAME | www | `dietcoachme.github.io` |
    - Alte Einträge, die auf Soloist zeigen, entfernen. Sobald die Domain geprüft ist, **Enforce HTTPS** anhaken. Danach kann das Soloist-Abo gekündigt werden.
 5. **Datenschutz:** In `datenschutz.html` als Hosting-Anbieter GitHub eintragen.
 
