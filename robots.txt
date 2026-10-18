@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dietcoach.me/sitemap.xml
