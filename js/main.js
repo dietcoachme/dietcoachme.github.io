@@ -118,5 +118,17 @@ if (form) {
   });
 }
 
+// YouTube erst nach Klick laden (Datenschutz)
+document.querySelectorAll("[data-video]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.video}?autoplay=1&rel=0`;
+    iframe.title = button.getAttribute("aria-label").replace("Video abspielen: ", "");
+    iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    iframe.allowFullscreen = true;
+    button.replaceWith(iframe);
+  });
+});
+
 // Jahr im Footer
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
