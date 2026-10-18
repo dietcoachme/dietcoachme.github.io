@@ -11,9 +11,9 @@ Statische Website (HTML, CSS, etwas JavaScript), gestaltet nach dem Vorbild von 
 | `impressum.html`, `datenschutz.html` | Vorlagen mit Platzhaltern |
 
 ## Vor dem Livegang ausfüllen
-1. **Impressum & Datenschutz:** alle gelb markierten `[Platzhalter]` ersetzen (vollständiger Name, Anschrift, Hosting-Anbieter, Ausbildungsinstitut, Stand). Am besten rechtlich prüfen lassen.
-2. **Kontaktformular:** kostenloses Konto bei https://formspree.io anlegen, Formular erstellen und die ID in `js/main.js` bei `FORMSPREE_ID` eintragen. Bis dahin öffnet „Anfrage senden“ das E-Mail-Programm mit vorausgefülltem Text.
-3. **Online-Terminbuchung:** Calendly-Konto (oder ähnlich) anlegen, Ereignis „Kostenloses Erstgespräch“ erstellen und den Link in `js/main.js` bei `CALENDLY_URL` eintragen. Bis dahin führen alle „Erstgespräch“-Buttons zum Anfrageformular.
+1. **Impressum, AGB, Widerrufsbelehrung & Datenschutz:** ausgefüllt (Stand Oktober 2026). Am besten einmal rechtlich prüfen lassen.
+2. **Kontaktformular:** kostenloses Konto bei https://formspree.io anlegen, Formular erstellen und die ID in `js/main.js` bei `FORMSPREE_ID` eintragen. Bis dahin öffnet „Anfrage senden“ das E-Mail-Programm mit vorausgefülltem Text. **Danach in `datenschutz.html` Abschnitt 4 um Formspree (Formspree, Inc., USA) ergänzen.**
+3. **Online-Terminbuchung:** Calendly-Konto (oder ähnlich) anlegen, Ereignis „Kostenloses Erstgespräch“ erstellen und den Link in `js/main.js` bei `CALENDLY_URL` eintragen. Bis dahin führen alle „Erstgespräch“-Buttons zum Anfrageformular. **Danach in `datenschutz.html` einen Abschnitt zu Calendly ergänzen.**
 4. **Instagram (optional):** in `index.html` im Footer die auskommentierte Zeile aktivieren und `[INSTAGRAM-HANDLE]` ersetzen.
 5. **Preis prüfen:** Die 5er-Karte (480 € = 96 €/Std.) ist pro Stunde teurer als die Einzelstunde (95 €). Wurde unverändert von der alten Seite übernommen – evtl. auf z. B. 450 € anpassen.
 
@@ -45,7 +45,6 @@ Die Seite ist fertig für GitHub Pages: alle Pfade sind relativ, `index.html` li
      | A | @ | 185.199.111.153 |
      | CNAME | www | `dietcoachme.github.io` |
    - Alte Einträge, die auf Soloist zeigen, entfernen. Sobald die Domain geprüft ist, **Enforce HTTPS** anhaken. Danach kann das Soloist-Abo gekündigt werden.
-5. **Datenschutz:** In `datenschutz.html` als Hosting-Anbieter GitHub eintragen.
 
 **Hinweis:** Bei einem öffentlichen Repository ist der gesamte Code einsehbar. Bitte keine privaten Daten committen, die nicht ohnehin auf der Website stehen.
 
