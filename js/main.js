@@ -108,7 +108,7 @@ if (form) {
       if (!res.ok) throw new Error(res.statusText);
       form.reset();
       status.classList.add("is-ok");
-      status.textContent = "Danke für deine Nachricht! Ich melde mich innerhalb von 24 Stunden bei dir. – Ella";
+      status.textContent = "Danke für deine Nachricht! Ich melde mich so bald wie möglich bei dir. – Ella";
     } catch {
       status.classList.add("is-error");
       status.textContent = `Das hat leider nicht geklappt. Schreib mir gern direkt an ${CONTACT_EMAIL} oder per WhatsApp.`;
