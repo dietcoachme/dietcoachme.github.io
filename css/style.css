@@ -173,15 +173,21 @@ p { margin: 0 0 1.2em; }
 .site-header.is-solid .wrap { height: 4.375rem; }
 
 .logo {
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 3vw, 2.8rem);
-  font-style: italic;
+  display: block;
   text-decoration: none;
-  line-height: 1;
-  transition: font-size .4s;
+  line-height: 0;
 }
-.logo span { font-style: normal; font-family: var(--sans); font-size: clamp(.68rem, .9vw, .8rem); letter-spacing: .3em; text-transform: uppercase; margin-left: .5em; opacity: .8; }
-.site-header.is-solid .logo { font-size: clamp(2rem, 2.6vw, 2.4rem); }
+/* Logo als Maske: übernimmt die Textfarbe (weiß über Fotos, dunkel auf hellem Hintergrund) */
+.logo__img {
+  display: block;
+  height: clamp(3.4rem, 4.6vw, 4.4rem);
+  aspect-ratio: 3 / 1;
+  background: currentColor;
+  -webkit-mask: url("../img/logo.png") center / contain no-repeat;
+  mask: url("../img/logo.png") center / contain no-repeat;
+  transition: height .4s;
+}
+.site-header.is-solid .logo__img { height: clamp(3rem, 3.6vw, 3.6rem); }
 
 .nav ul { display: flex; align-items: center; gap: clamp(20px, 3vw, 2.5rem); list-style: none; margin: 0; padding: 0; }
 .nav a {
@@ -642,7 +648,8 @@ p { margin: 0 0 1.2em; }
 
 .site-footer { background: var(--ink); color: #b9b0a5; padding: 4.5rem 0 2.5rem; font-size: .9rem; }
 .site-footer .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 48px; border-bottom: 1px solid #3a3632; }
-.site-footer .logo { color: var(--bg); font-size: 2.6rem; }
+.site-footer .logo { color: var(--bg); }
+.site-footer .logo__img { height: 4.6rem; }
 .site-footer p { margin: .8em 0 0; max-width: 24em; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px 28px; }
 .site-footer a { text-decoration: none; transition: color .3s; }
