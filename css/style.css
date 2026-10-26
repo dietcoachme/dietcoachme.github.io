@@ -160,7 +160,7 @@ p { margin: 0 0 1.2em; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5.5rem;
+  height: 7rem;
   transition: height .4s;
 }
 .site-header.is-solid,
@@ -174,14 +174,14 @@ p { margin: 0 0 1.2em; }
 
 .logo {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  font-size: clamp(3rem, 4.6vw, 4.4rem);
   font-style: italic;
   text-decoration: none;
   line-height: 1;
   transition: font-size .4s;
 }
-.logo span { font-style: normal; font-family: var(--sans); font-size: clamp(.68rem, .9vw, .8rem); letter-spacing: .3em; text-transform: uppercase; margin-left: .5em; opacity: .8; }
-.site-header.is-solid .logo { font-size: clamp(2rem, 2.6vw, 2.4rem); }
+.logo span { font-style: normal; font-family: var(--sans); font-size: clamp(.72rem, 1vw, .92rem); letter-spacing: .3em; text-transform: uppercase; margin-left: .5em; opacity: .8; }
+.site-header.is-solid .logo { font-size: clamp(2.4rem, 3.2vw, 3rem); }
 
 .nav ul { display: flex; align-items: center; gap: clamp(20px, 3vw, 2.5rem); list-style: none; margin: 0; padding: 0; }
 .nav a {
@@ -277,7 +277,7 @@ p { margin: 0 0 1.2em; }
   .hero::after {
     background: linear-gradient(90deg, var(--ink) 0%, var(--ink) 46%, rgba(28, 26, 24, .55) 52%, rgba(28, 26, 24, 0) 66%);
   }
-  .hero__content { padding-top: 7.5rem; padding-bottom: 5rem; }
+  .hero__content { padding-top: 9.5rem; padding-bottom: 5rem; }
   .hero__content > * { max-width: min(35rem, 44%); }
   .hero h1 { font-size: clamp(3.2rem, 5.2vw, 5.2rem); max-width: min(35rem, 44%); }
 }
