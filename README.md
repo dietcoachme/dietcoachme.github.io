@@ -15,7 +15,6 @@ Statische Website (HTML, CSS, etwas JavaScript), gestaltet nach dem Vorbild von 
 2. **Kontaktformular:** kostenloses Konto bei https://formspree.io anlegen, Formular erstellen und die ID in `js/main.js` bei `FORMSPREE_ID` eintragen. Bis dahin öffnet „Anfrage senden“ das E-Mail-Programm mit vorausgefülltem Text. **Danach in `datenschutz.html` Abschnitt 4 um Formspree (Formspree, Inc., USA) ergänzen.**
 3. **Online-Terminbuchung:** Calendly-Konto (oder ähnlich) anlegen, Ereignis „Kostenloses Erstgespräch“ erstellen und den Link in `js/main.js` bei `CALENDLY_URL` eintragen. Bis dahin führen alle „Erstgespräch“-Buttons zum Anfrageformular. **Danach in `datenschutz.html` einen Abschnitt zu Calendly ergänzen.**
 4. **Instagram (optional):** in `index.html` im Footer die auskommentierte Zeile aktivieren und `[INSTAGRAM-HANDLE]` ersetzen.
-5. **Preis prüfen:** Die 5er-Karte (480 € = 96 €/Std.) ist pro Stunde teurer als die Einzelstunde (95 €). Wurde unverändert von der alten Seite übernommen – evtl. auf z. B. 450 € anpassen.
 
 ## Lokal ansehen
 ```bash
