@@ -160,7 +160,6 @@ p { margin: 0 0 1.2em; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   height: 5.5rem;
   transition: height .4s;
 }
@@ -179,7 +178,6 @@ p { margin: 0 0 1.2em; }
   font-style: italic;
   text-decoration: none;
   line-height: 1;
-  white-space: nowrap;
   transition: font-size .4s;
 }
 .logo span { font-style: normal; font-family: var(--sans); font-size: clamp(.68rem, .9vw, .8rem); letter-spacing: .3em; text-transform: uppercase; margin-left: .5em; opacity: .8; }
@@ -194,7 +192,6 @@ p { margin: 0 0 1.2em; }
   text-decoration: none;
   padding: .4em 0;
   border-bottom: 1px solid transparent;
-  white-space: nowrap;
   transition: border-color .3s;
 }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: currentColor; }
@@ -215,7 +212,7 @@ p { margin: 0 0 1.2em; }
 }
 .nav-toggle span { display: block; height: 1px; background: currentColor; margin: 7px 0; transition: transform .3s, opacity .3s; }
 
-@media (max-width: 1040px) {
+@media (max-width: 900px) {
   .nav-toggle { display: block; position: relative; z-index: 2; }
   .nav {
     position: fixed;
