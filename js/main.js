@@ -7,6 +7,22 @@ const CONTACT_EMAIL = "DietcoachMe@gmail.com";
 
 document.documentElement.classList.add("js");
 
+// Texte, die das Skript selbst anzeigt – je nach Sprache der Seite
+const EN = document.documentElement.lang === "en";
+const T = EN
+  ? {
+      subject: "Enquiry via dietcoach.me",
+      sending: "Sending …",
+      thanks: "Thank you for your message! I’ll get back to you as soon as possible. – Ella",
+      error: `Sorry, that didn’t work. Feel free to write to me directly at ${CONTACT_EMAIL} or via WhatsApp.`,
+    }
+  : {
+      subject: "Anfrage über dietcoach.me",
+      sending: "Wird gesendet …",
+      thanks: "Danke für deine Nachricht! Ich melde mich so bald wie möglich bei dir. – Ella",
+      error: `Das hat leider nicht geklappt. Schreib mir gern direkt an ${CONTACT_EMAIL} oder per WhatsApp.`,
+    };
+
 // Header: transparent über dem Hero, hell beim Scrollen
 const header = document.querySelector(".site-header");
 if (header && !header.classList.contains("site-header--light")) {
@@ -91,14 +107,14 @@ if (form) {
         .filter(([k]) => k !== "datenschutz")
         .map(([k, v]) => `${k}: ${v}`)
         .join("\n");
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Anfrage über dietcoach.me")}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(T.subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
 
     const button = form.querySelector("button[type=submit]");
     button.disabled = true;
     status.className = "form-status";
-    status.textContent = "Wird gesendet …";
+    status.textContent = T.sending;
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
@@ -108,10 +124,10 @@ if (form) {
       if (!res.ok) throw new Error(res.statusText);
       form.reset();
       status.classList.add("is-ok");
-      status.textContent = "Danke für deine Nachricht! Ich melde mich so bald wie möglich bei dir. – Ella";
+      status.textContent = T.thanks;
     } catch {
       status.classList.add("is-error");
-      status.textContent = `Das hat leider nicht geklappt. Schreib mir gern direkt an ${CONTACT_EMAIL} oder per WhatsApp.`;
+      status.textContent = T.error;
     } finally {
       button.disabled = false;
     }
@@ -123,7 +139,7 @@ document.querySelectorAll("[data-video]").forEach((button) => {
   button.addEventListener("click", () => {
     const iframe = document.createElement("iframe");
     iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.video}?autoplay=1&rel=0`;
-    iframe.title = button.getAttribute("aria-label").replace("Video abspielen: ", "");
+    iframe.title = button.getAttribute("aria-label").replace(/^[^:]+:\s*/, "");
     iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
     iframe.allowFullscreen = true;
     button.replaceWith(iframe);

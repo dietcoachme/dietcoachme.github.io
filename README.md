@@ -9,6 +9,7 @@ Statische Website (HTML, CSS, etwas JavaScript), gestaltet nach dem Vorbild von 
 | `angebote.html` | Angebote im Detail, Preise, Ablauf, Anfrageformular (`#anfrage`) |
 | `ueber-mich.html` | Ellas Geschichte und Haltung |
 | `impressum.html`, `datenschutz.html` | Vorlagen mit Platzhaltern |
+| `en/index.html`, `en/offers.html`, `en/about.html` | Englische Fassung von Startseite, Angebote und Über mich (Umschalter DE \| EN im Menü). Impressum, Datenschutz, AGB und Widerruf gibt es nur auf Deutsch; die englischen Seiten verlinken darauf. Bei Textänderungen bitte beide Sprachen anpassen. |
 
 ## Vor dem Livegang ausfüllen
 1. **Impressum, AGB, Widerrufsbelehrung & Datenschutz:** ausgefüllt (Stand Oktober 2026). Am besten einmal rechtlich prüfen lassen.

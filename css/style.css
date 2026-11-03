@@ -192,10 +192,16 @@ p { margin: 0 0 1.2em; }
   text-decoration: none;
   padding: .4em 0;
   border-bottom: 1px solid transparent;
+  white-space: nowrap;
   transition: border-color .3s;
 }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: currentColor; }
 .nav .nav-cta { border: 1px solid currentColor; padding: .9em 1.4em; }
+.nav .lang { display: flex; }
+.nav .lang a { opacity: .55; transition: opacity .3s; }
+.nav .lang a:hover, .nav .lang a.is-active { opacity: 1; }
+.nav .lang a + a { margin-left: .7em; }
+.nav .lang a + a::before { content: "|"; display: inline-block; margin-right: .9em; opacity: .5; }
 .nav .nav-cta:hover { background: currentColor; }
 .nav .nav-cta:hover span { color: var(--ink); }
 .site-header.is-solid .nav .nav-cta:hover span, .site-header--light .nav .nav-cta:hover span { color: var(--bg); }
@@ -212,7 +218,7 @@ p { margin: 0 0 1.2em; }
 }
 .nav-toggle span { display: block; height: 1px; background: currentColor; margin: 7px 0; transition: transform .3s, opacity .3s; }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .nav-toggle { display: block; position: relative; z-index: 2; }
   .nav {
     position: fixed;
